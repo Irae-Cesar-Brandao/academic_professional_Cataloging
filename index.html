@@ -5,17 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catalogação Acadêmica Profissional</title>
 <style>
-body{font-family:Arial;margin:0;background:#f4f4f4}
-header{background:#2c3e50;color:#fff;padding:15px;text-align:center}
-.container{padding:15px}
-.section{background:#fff;padding:15px;margin-bottom:15px;border-radius:8px}
-input,textarea,select{width:100%;padding:8px;margin:5px 0 10px}
-button{margin:5px;padding:8px;border:none;background:#3498db;color:#fff;cursor:pointer}
-button:hover{background:#2980b9}
-.ref-item,.citacao-item{border:1px solid #ddd;padding:10px;margin-top:10px}
-table{width:100%;border-collapse:collapse}
-th,td{border:1px solid #ccc;padding:8px}
-th{background:#ddd}
+body{
+font-family:Arial;
+margin:0;
+background:#f4f4f4
+}
+
+header{
+background:#2c3e50;
+color:#fff;
+padding:15px;
+text-align:center;
+}
+
+.container{
+padding:15px;
+}
+
+.section{
+background:#fff;
+padding:15px;
+margin-bottom:15px;
+border-radius:8px;
+}
+
+input,textarea,select{
+width:100%;
+padding:8px;
+margin:5px 0 10px;
+}
+
+button{
+margin:5px;
+padding:8px;
+border:none;
+background:#3498db;
+color:#fff;cursor:pointer;
+}
+
+button:hover{
+background:#2980b9;
+}
+
+.ref-item,.citacao-item{
+border:1px solid #ddd;
+padding:10px;
+margin-top:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:8px;
+}
+
+th{
+background:#ddd;
+}
 
 </style>
 
@@ -25,13 +75,31 @@ th{background:#ddd}
 <body>
 
 <header>
-<h1 style="-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: lightblue;">CATALOGAÇÃO ACADÊMICA PROFISSIONAL (CAP)</h1>
-<p><b>Iraê César Brandão - Desenvolver WEB </b>-------- <i>Atualizado em: 23/03/2026</i></p>
+<!--====SELECT LANGUAGES / PT/BR====-->
+
+<div style="position:absolute; top:10px; right:20px; display:flex; gap:15px; align-items:center;">
+
+  <!-- 🇧🇷 Português -->
+  <a href="index2.html" title="Português Brasil" style="text-decoration:none;">
+    <img src="https://flagcdn.com/w40/br.png" style="width:30px; vertical-align:middle;">
+    <span style="color:white;"> PT-BR</span>
+  </a>
+
+  <!-- 🇺🇸 English -->
+  <a href="index.html" title="English Version" style="text-decoration:none;">
+    <img src="https://flagcdn.com/w40/us.png" style="width:30px; vertical-align:middle;">
+    <span style="color:white;"> EN</span>
+  </a>
+
+</div>
+
+<h1 style="-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: lightblue;">PROFESSIONAL ACADEMIC CATALOGING (PAC)</h1>
+<p><b>Iraê César Brandão - Web Developer  </b>-------- <i> Updated on: 03/23/2026</i></p>
 </header>
 
 <div style="background:#ffffff; margin:15px; padding:15px; border-radius:8px; text-align:justify; font-style:italic; line-height:1.6;">
-  <b>Finalidade de uso:</b><br><br>
-  Este framework foi elaborado com a finalidade de estruturar, organizar e problematizar a produção acadêmica a partir de uma perspectiva relacional do conhecimento, na qual referências e citações não são apenas registros técnicos, mas expressões de vínculos epistemológicos e institucionais. Ao integrar dados bibliográficos e práticas de citação em um mesmo ambiente, busca-se não apenas facilitar a sistematização da pesquisa, mas também evidenciar as dinâmicas de construção do mérito, da autoria e da circulação do saber no campo acadêmico.
+  <b>Purpose of Use:</b><br><br>
+  This framework was developed to structure, organize, and problematize academic production from a relational perspective of knowledge, in which references and citations are not merely technical records but expressions of epistemological and institutional connections. By integrating bibliographic data and citation practices within a single environment, it aims not only to facilitate research systematization but also to highlight the dynamics of merit construction, authorship, and knowledge circulation in the academic field.
 </div>
 
 <div style="background:#2c3e50; color:#fff; margin:15px; padding:20px; border-radius:8px; text-align:center;">
@@ -42,112 +110,112 @@ th{background:#ddd}
 
 
 <div class="section">
-<h2>Cadastro de Pesquisa Acadêmica  📄</h2>
+<h2>Academic Research Registration 📄</h2>
 <div id="refs"></div>
-<button onclick="adicionarReferencia()">+ Referência</button>
-<button onclick="salvar()">SALVAR</button>
-<button onclick="atualizar()">ATUALIZAR</button>
+<button onclick="adicionarReferencia()">+ REFERENCE</button>
+<button onclick="salvar()">SAVE</button>
+<button onclick="atualizar()">UPDATE</button>
 </div>
 
 <div class="section">
-<h2>Ações</h2>
-<button onclick="exportarXML()">EXPORTAR XML</button>
-<button onclick="exportarCSV()">EXPORTAR XLS</button>
-<button onclick="exportarPDF()">EXPORTAR PDF</button>
+<h2>Actions</h2>
+<button onclick="exportarXML()">EXPORT XML</button>
+<button onclick="exportarCSV()">EXPORT XLS</button>
+<button onclick="exportarPDF()">EXPORT PDF</button>
 <input type="file" onchange="importarXML(event)">
-<button onclick="limpar()">LIMPAR</button>
+<button onclick="limpar()">CLEAR BD</button>
 </div>
 
 <div class="section">
-<h2>Registros</h2>
+<h2>RECORDS</h2>
 <table>
-<thead><tr><th>#</th><th>Título</th><th>Autor</th><th>Ações</th></tr></thead>
+<thead><tr><th>#</th><th>Title</th><th>Author</th><th>Actions</th></tr></thead>
 <tbody id="tabela"></tbody>
 </table>
 </div>
 
 
 <div style="background:#2c3e50; color:#fff; margin:15px; padding:20px; border-radius:8px; text-align:center;">
-  <h3>TUTORIAL / ORIENTAÇÕES</h3>
+  <h3>TUTORIAL / GUIDELINES</h3>
 </div>
 
 <!--======  ORIENTAÇÕES DE USO - GUIA COMPLETO ====-->
 
 <div style="background:#fff; margin:15px; padding:15px; border-radius:8px;">
-  <h3>Guia de Uso do Sistema</h3>
+  <h3>System Usage Guide</h3>
 
   <table style="width:100%; border-collapse:collapse; text-align:left;">
     <thead>
       <tr style="background:#ddd;">
-        <th style="padding:8px;">Etapa</th>
-        <th style="padding:8px;">Ação</th>
-        <th style="padding:8px;">Descrição</th>
-        <th style="padding:8px;">Atenção ⚠️</th>
+        <th style="padding:8px;">Step</th>
+        <th style="padding:8px;">Action</th>
+        <th style="padding:8px;">Description</th>
+        <th style="padding:8px;">Attention ⚠️</th>
       </tr>
     </thead>
     <tbody>
 
       <tr>
         <td style="padding:8px;">1</td>
-        <td style="padding:8px;">Adicionar Referência</td>
-        <td style="padding:8px;">Insere um novo bloco para preenchimento dos dados bibliográficos.</td>
-        <td style="padding:8px;">Preencha todos os campos relevantes antes de salvar.</td>
+        <td style="padding:8px;">Add Reference</td>
+        <td style="padding:8px;">Creates a new block for bibliographic data entry.</td>
+        <td style="padding:8px;">Fill all relevant fields before saving.</td>
       </tr>
 
       <tr>
         <td style="padding:8px;">2</td>
-        <td style="padding:8px;">Adicionar Citação</td>
-        <td style="padding:8px;">Permite inserir uma ou mais citações vinculadas à referência.</td>
-        <td style="padding:8px;">Evite deixar campos de citação vazios.</td>
+        <td style="padding:8px;">	Add Citation</td>
+        <td style="padding:8px;">Add one or more citations linked to the reference.</td>
+        <td style="padding:8px;">Avoid leaving citation fields empty.</td>
       </tr>
 
       <tr>
         <td style="padding:8px;">3</td>
-        <td style="padding:8px;">Salvar</td>
-        <td style="padding:8px;">Armazena os dados no navegador (localStorage).</td>
-        <td style="padding:8px;"><b>Obrigatório antes de qualquer exportação ou limpeza.</b></td>
+        <td style="padding:8px;">Save</td>
+        <td style="padding:8px;">Stores data in browser (localStorage).</td>
+        <td style="padding:8px;"><b>Required before exporting or clearing.</b></td>
       </tr>
 
       <tr>
         <td style="padding:8px;">4</td>
-        <td style="padding:8px;">Atualizar</td>
-        <td style="padding:8px;">Edita um registro existente selecionado.</td>
-        <td style="padding:8px;">Só funciona após clicar em "Editar".</td>
+        <td style="padding:8px;">Update</td>
+        <td style="padding:8px;">Edits an existing selected record.</td>
+        <td style="padding:8px;">Only works after clicking "Edit".</td>
       </tr>
 
       <tr>
         <td style="padding:8px;">5</td>
-        <td style="padding:8px;">Exportar XML</td>
-        <td style="padding:8px;">Gera arquivo estruturado para reimportação futura.</td>
-        <td style="padding:8px;">Ideal para backup completo do sistema.</td>
+        <td style="padding:8px;">Export XML</td>
+        <td style="padding:8px;">Generates structured file for future import.</td>
+        <td style="padding:8px;">Ideal for full backup.</td>
       </tr>
 
       <tr>
         <td style="padding:8px;">6</td>
-        <td style="padding:8px;">Exportar XLS</td>
-        <td style="padding:8px;">Exporta os dados para uso em planilhas.</td>
-        <td style="padding:8px;">Citações são agrupadas em um único campo.</td>
+        <td style="padding:8px;">Export XLS</td>
+        <td style="padding:8px;">Exports data for spreadsheets.</td>
+        <td style="padding:8px;">Citations are grouped in one field.</td>
       </tr>
 
       <tr>
         <td style="padding:8px;">7</td>
-        <td style="padding:8px;">Exportar PDF</td>
-        <td style="padding:8px;">Gera relatório formatado para leitura e impressão.</td>
-        <td style="padding:8px;">Formato não editável.</td>
+        <td style="padding:8px;">Export PDF</td>
+        <td style="padding:8px;">Generates formatted report.</td>
+        <td style="padding:8px;">Non-editable format.</td>
       </tr>
 
       <tr>
         <td style="padding:8px;">8</td>
-        <td style="padding:8px;">Importar XML</td>
-        <td style="padding:8px;">Permite restaurar ou mesclar dados anteriores.</td>
-        <td style="padding:8px;">Verifique duplicações antes de mesclar.</td>
+        <td style="padding:8px;">Import XML</td>
+        <td style="padding:8px;">Restores or merges previous data.</td>
+        <td style="padding:8px;">Check duplicates before merging.</td>
       </tr>
 
       <tr>
         <td style="padding:8px;">9</td>
-        <td style="padding:8px;">Limpar</td>
-        <td style="padding:8px;">Remove todos os dados do sistema.</td>
-        <td style="padding:8px;"><b> ⚠️ Sempre exporte antes — ação irreversível.</b></td>
+        <td style="padding:8px;">Clear</td>
+        <td style="padding:8px;">	Deletes all data.</td>
+        <td style="padding:8px;"><b> ⚠️ Always export before — "irreversible action."</b></td>
       </tr>
 
     </tbody>
@@ -157,59 +225,64 @@ th{background:#ddd}
 <!-- =======    ORIENTAÇÕES DE REGRAS DE CITAÇÃO (ABNT, SBC, AMA/Vancouver)======= -->
 
 <div style="background:#fff; margin:15px; padding:15px; border-radius:8px; text-align:justify; line-height:1.6;">
-  <h2>Normas e Modelos de Citação</h2>
+  <h2>Citation Standards and Models</h2>
 
-  <p><b>ABNT (NBR 10520):</b><a href="https://abnt.org.br/" target="_blank">(Associação Brasileira de Normas Técnicas)</a><br>
-  	Utiliza sistema autor-data. Exemplo: (SOBRENOME, 2020, p. 10). Exige identificação completa da obra na referência. 
+  <p>✅ <b>ABNT (NBR 10520):</b><a href="https://abnt.org.br/" target="_blank">(Brazilian Association of Technical 	Standards)</a><br>
+  	Uses an author-date system. Example: (LAST NAME, 2020, p. 10). Requires complete identification of the work in the 		reference. 
 	<br>
-	(ex: SOBRENOME, Nome do Autor. Título do artigo. Título da Revista, Local de publicação, volume, número, 	páginas 	inicial-final, mês abr. ano. DOI ou Disponível em: URL. Acesso em: dia mês abr. ano).
+	(e.g., LAST NAME, Author's First Name. Article Title. Journal Title, Publication Location, Volume, Number, Initial-Final 		Pages, Month Apr. Year. DOI or Available at: URL. Accessed on: Day Month Apr. Year).
+
 	</p>
 
 
-  <p>✅ <b>SBC:</b><a href="https://www.sbc.org.br/" target="_blank">(Sociedade Brasileira de Computação)</a><br>
-  	Baseada em autor-ano, semelhante à ABNT, mas com variações na formatação de referências. Usada em artigos 			científicos da área de computação.
+  <p>✅ <b>SBC:</b><a href="https://www.sbc.org.br/" target="_blank">(Brazilian Computer Society)</a><br>
+  	Based on author-year, similar to ABNT, but with variations in reference formatting. Used in scientific articles in the field of 	computing.
 	</p>     
 
 
-<p>✅ <b>MLA (9ª edição):</b><a href="https://libguides.csudh.edu/citation/mla" target="_blank">( Modern Language Association)</a><br>
- 	Para artigos científicos, acadêmicos ou de revistas foca na localização precisa do material. No texto, utiliza-se: <br>
-	<ul>
-	<li><b> Padrão: </b>(Sobrenome Página) - Exemplo: (Poythress 185).</li>
-	<li><b>Narrativa (Autor no texto): </b>Segundo Poythress, o texto... (185).</li>
-	<li><b>Dois autores:</b> (Almeida e Azevedo 45).</li>
-	<li><b>Três ou mais autores:</b> (Latartara et al. 97).</li>
-	<li><b>Referencias: </b>(ex :  Sobrenome, Nome. "Título do 	Artigo." Nome do Periódico, vol. #, no. #, Data de 			Publicação, pp. páginas. DOI ou URL).</li>
-	</ul>
+<p>✅ <b>MLA (9th edition):</b>
+<a href="https://libguides.csudh.edu/citation/mla" target="_blank">(Modern Language Association)</a><br>
+For scientific, academic, or journal articles, it focuses on the precise location of the material. In the text, use:</p>
+
+<ul>
+<li><b>Pattern:</b> (Last Name Page) - e.g., (Poythress 185).</li>
+<li><b>Narrative:</b> According to Poythress... (185).</li>
+<li><b>Two authors:</b> (Almeida and Azevedo 45).</li>
+<li><b>Three or more authors:</b> (Latartara et al. 97).</li>
+<li><b>References:</b> Last Name, First Name. "Article Title." Journal Name...</li>
+</ul>
 	</p>
  
 
   <p>✅ <b>AMA :</b><a href="https://umc.libguides.com/citations/ama" target="_blank">(American Medical Association)</a><br>
-  	Sistema numérico. As citações aparecem como números no texto. <br>
-	(ex: [1]). A lista de referências é ordenada conforme a aparição. Dados essenciais incluem autor, título, periódico, volume 	e ano).
+  	Numerical system. Citations appear as numbers in the text.  <br>
+	(e.g., [1]). The reference list is ordered according to appearance. Essential data includes author, title, journal, volume, 	and year).
 	</p>
 
-  <p>✅ <b>Vancouver:</b><a href="https://biblioguias.uma.es/citasybibliografia/ejemplosvancouver" target="_blank">(Vancouver-Saúde e Medicina)</a><br>
-  	Também utiliza sistema numérico. Muito comum na área da saúde. As referências seguem ordem de citação no texto.<br> 		Exemplo: (1), (2), etc.
+  <p>✅ <b>Vancouver:</b><a href="https://biblioguias.uma.es/citasybibliografia/ejemplosvancouver" target="_blank">(Vancouver-	Health and Medicine)</a><br>
+  	It also uses a numerical system. Very common in the health field. References follow the order of citation in the text.<br> 		(e.g.,  (1), (2), etc.)
 	</p>
 
-  <p>✅ <b>Tipos de Citação:</b><a href="https://www.compilatio.net/pt/blog/fazer-uma-bibliografia" target="_blank">(Bibliografia e Referências)</a></p>
-  	<ul>
-   	 <li><b>Citação Direta Curta:</b> até 3 linhas, entre aspas.</li>
-   	 <li><b>Citação Direta Longa:</b> mais de 3 linhas, recuada e sem aspas.</li>
-    	<li><b>Citação Indireta:</b> paráfrase do conteúdo.</li>
-    	<li><b>Apud:</b> citação de citação.</li>
-  	</ul>
-  <p><b>Dados fundamentais para citação:</b> Autor, ano, página, título da obra e contexto da citação.</p>
+<p>✅ <b>Types of Citation:</b>
+<a href="https://www.compilatio.net/pt/blog/fazer-uma-bibliografia" target="_blank">(Bibliography and References)</a></p>
+
+<ul>
+ <li><b>Short Direct Quotation:</b> up to 3 lines, in quotation marks.</li>
+ <li><b>Long Direct Quotation:</b> more than 3 lines, indented.</li>
+ <li><b>Indirect Quotation:</b> paraphrase.</li>
+ <li><b>Apud:</b> citation of a citation.</li>
+</ul>
+  <p><b>Fundamental data for citation:</b> Author, year, page, title of the work and context of the citation.</p>
 
   <hr><hr>
 
-  <h2>Recomendações sobre ética e Direitos Autorais</h2>
-  <p> 🚫 <b>Evite o Plágio: </b>Todo pensamento, dado ou frase que não for de sua autoria deve ser referenciado:
+  <h2>Recommendations on Ethics and Rights Author's Note</h2>
+  <p> 🚫 <b>Avoid Plagiarism: </b>Every thought, data, or phrase that is not your own must be referenced:
 	<ul>
- 	<li><b>Integridade: </b>Garante a honestidade na representação das ideias de outra pessoa.</li>
- 	<li><b>Respeito: </b>Demonstra apreço pelas contribuições intelectuais dos outros.</li>
- 	<li><b>Responsabilidade:</b> Permite que seu trabalho seja rastreado e verificado por meio de suas fontes.</li>
- 	<li><b>Reputação acadêmica: </b>Mantém sua credibilidade e integridade acadêmica.</li>
+ 	<li><b>Integrity: </b>Ensures honesty in the representation of another person's ideas.</li>
+ 	<li><b>Respect: </b>Demonstrates appreciation for the intellectual contributions of others.</li>
+ 	<li><b>Responsibility:</b>Allows your work to be traced and verified through its sources.</li>
+ 	<li><b>Academic Reputation: </b>Maintains your academic credibility and integrity.</li>
   	</ul>
     </p>
 
@@ -217,13 +290,12 @@ th{background:#ddd}
 
 <!--========== MENSAGEM FINAL========-->
 <div style="background:#2c3e50; color:#fff; margin:15px; padding:20px; border-radius:8px; text-align:center;">
-  <h3>Boa Pesquisa!</h3>
+  <h3>GOOD RESEARCH !</h3>
   <p>
-    Que este sistema contribua para a organização, clareza e profundidade do seu trabalho acadêmico. 
-    A produção do conhecimento exige rigor, reflexão e consistência — e cada referência registrada 
-    é um passo na construção de um pensamento mais sólido e significativo.
+   	May this system contribute to the organization, clarity, and depth of your academic work.
+	The production of knowledge demands rigor, reflection, and consistency — and each recorded reference is a step in building a more solid and meaningful thought.
   </p>
-  <p><i>Sucesso na sua jornada científica.</i></p>
+  <p><i>Success in your scientific journey.</i></p>
 </div>
   
 </div>
@@ -232,421 +304,418 @@ th{background:#ddd}
 <script>
 let editIndex = null;
 
-
-/*==== FUNÇÃO ADICIONAR REFERENCIAL====*/
+/*==== ADD REFERENCE ====*/
 function adicionarReferencia(){
  const c = document.getElementById('refs');
  const d = document.createElement('div');
  d.className='ref-item';
- d.innerHTML = "\
- 	<input class='numero' placeholder='Nº Referência'>\
- 	<input class='autor' placeholder='Autor(es)'>\
- 	<input class='titulo' placeholder='Título'>\
- 	<input class='subtitulo' placeholder='Subtítulo'>\
- 	<input class='tipo' placeholder='Tipo'>\
- 	<input class='edicao' placeholder='Edição'>\
- 	<input class='local' placeholder='Local'>\
- 	<input class='editora' placeholder='Editora'>\
- 	<input class='ano' placeholder='Ano'>\
- 	<input class='link' placeholder='DOI ou Link'>\
- 	<input class='link2' placeholder='Link Alternativo'>\
- 	<input class='data' placeholder='Data de acesso'>\
- <select class='citacaoTipo'>\
- 	<option>Citação Direta Curta</option>\
- 	<option>Citação Direta Longa</option>\
- 	<option>Citação Indireta</option>\
- 	<option>Apud</option>\
- </select>\
- <input class='pagina' placeholder='Página'>\
- <div class='citacoes'></div>\
- <button onclick='adicionarCitacao(this)'>+ Citação</button>";
+
+ d.innerHTML = `
+  <input class='numero' placeholder='Reference No.'>
+  <input class='autor' placeholder='Author(s)'>
+  <input class='titulo' placeholder='Title'>
+  <input class='subtitulo' placeholder='Subtitle'>
+  <input class='tipo' placeholder='Type'>
+  <input class='edicao' placeholder='Edition'>
+  <input class='local' placeholder='Location'>
+  <input class='editora' placeholder='Publisher'>
+  <input class='ano' placeholder='Year'>
+  <input class='link' placeholder='DOI or Link'>
+  <input class='link2' placeholder='Alternative Link'>
+  <input class='data' placeholder='Access date'>
+
+  <select class='citacaoTipo'>
+    <option>Short Direct Quotation</option>
+    <option>Long Direct Quotation</option>
+    <option>Indirect Quotation</option>
+    <option>Apud</option>
+  </select>
+
+  <input class='pagina' placeholder='Page(s)'>
+
+  <div class='citacoes'></div>
+  <button onclick='adicionarCitacao(this)'>+ Quotation</button>
+ `;
+
  c.appendChild(d);
 }
 
-
-/*==== FUNÇÃO ADICIONAR====*/
+/*==== ADD CITATION ====*/
 function adicionarCitacao(btn){
- 	const c = btn.previousElementSibling;
- 	const d = document.createElement('div');
- 	d.className='citacao-item';
- 	d.innerHTML = "<textarea class='citacao' placeholder='Citação'></textarea>";
-	 c.appendChild(d);
+ const c = btn.previousElementSibling;
+ const d = document.createElement('div');
+ d.innerHTML = `<textarea class='citacao' placeholder='Citation'></textarea>`;
+ c.appendChild(d);
 }
 
-
-/*==== FUNÇÃO COLETAR====*/
+/*==== COLLECT ====*/
 function coletar(ref){
  const citacoes = [];
- ref.querySelectorAll('.citacao').forEach(c=>citacoes.push(c.value));
+ ref.querySelectorAll('.citacao').forEach(c=>{
+   if(c.value.trim()) citacoes.push(c.value.trim());
+ });
+
  return {
- 	numero: ref.querySelector('.numero').value,
- 	autor: ref.querySelector('.autor').value,
- 	titulo: ref.querySelector('.titulo').value,
- 	subtitulo: ref.querySelector('.subtitulo').value,
- 	tipo: ref.querySelector('.tipo').value,
- 	edicao: ref.querySelector('.edicao').value,
- 	local: ref.querySelector('.local').value,
- 	editora: ref.querySelector('.editora').value,
- 	ano: ref.querySelector('.ano').value,
- 	link: ref.querySelector('.link').value,
- 	link2: ref.querySelector('.link2').value,
- 	data: ref.querySelector('.data').value,
- 	citacaoTipo: ref.querySelector('.citacaoTipo').value,
- 	pagina: ref.querySelector('.pagina').value,
- 	citacoes: citacoes
-             };
+  numero: ref.querySelector('.numero').value || '',
+  autor: ref.querySelector('.autor').value || '',
+  titulo: ref.querySelector('.titulo').value || '',
+  subtitulo: ref.querySelector('.subtitulo').value || '',
+  tipo: ref.querySelector('.tipo').value || '',
+  edicao: ref.querySelector('.edicao').value || '',
+  local: ref.querySelector('.local').value || '',
+  editora: ref.querySelector('.editora').value || '',
+  ano: ref.querySelector('.ano').value || '',
+  link: ref.querySelector('.link').value || '',
+  link2: ref.querySelector('.link2').value || '',
+  data: ref.querySelector('.data').value || '',
+  citacaoTipo: ref.querySelector('.citacaoTipo').value || '',
+  pagina: ref.querySelector('.pagina').value || '',
+  citacoes: citacoes
+ };
 }
 
-/*==== FUNÇÃO SALVAR====*/
+/*==== SAVE ====*/
 function salvar(){
- 	if(editIndex!==null){alert('Use ATUALIZAR');return;}
- 	let dados = JSON.parse(localStorage.getItem('dados')||'[]');
- 	document.querySelectorAll('.ref-item').forEach(ref=>{
- 	dados.push(coletar(ref));
-	 });
-	 localStorage.setItem('dados',JSON.stringify(dados));
- 	document.getElementById('refs').innerHTML='';
- 	listar();
-	e.target.value = '';
-alert('Importação completa com todos os campos!');
+ if(editIndex!==null){
+   alert('Use UPDATE.');
+   return;
+ }
+
+ let dados = JSON.parse(localStorage.getItem('dados')||'[]');
+
+ document.querySelectorAll('.ref-item').forEach(ref=>{
+   const obj = coletar(ref);
+
+   // evita salvar registros vazios
+   if(obj.titulo || obj.autor){
+     dados.push(obj);
+   }
+ });
+
+ localStorage.setItem('dados',JSON.stringify(dados));
+ document.getElementById('refs').innerHTML='';
+ listar();
+
+ alert('Saved successfully!');
 }
 
-
-/*==== FUNÇÃO ATUALIZAR====*/
+/*==== UPDATE ====*/
 function atualizar(){
- 	if(editIndex===null){alert('Selecione um registro');return;}
- 	let dados = JSON.parse(localStorage.getItem('dados'));
-	 const ref = document.querySelector('.ref-item');
-	 dados[editIndex] = coletar(ref);
-	 localStorage.setItem('dados',JSON.stringify(dados));
- 	editIndex=null;
- 	document.getElementById('refs').innerHTML='';
+ if(editIndex===null){
+   alert('Select a record');
+   return;
+ }
+
+ let dados = JSON.parse(localStorage.getItem('dados'));
+ const ref = document.querySelector('.ref-item');
+
+ dados[editIndex] = coletar(ref);
+
+ localStorage.setItem('dados',JSON.stringify(dados));
+
+ editIndex=null;
+ document.getElementById('refs').innerHTML='';
  listar();
 }
 
-
-/*==== FUNÇÃO LISTAR====*/
-function listar(){
- 	const dados = JSON.parse(localStorage.getItem('dados')||'[]');
- 	const tabela = document.getElementById('tabela');
- 	tabela.innerHTML='';
-	 dados.forEach((d,i)=>{
- 	tabela.innerHTML += `<tr><td>${i+1}</td><td>${d.titulo}</td><td>${d.autor}</td>
-	 <td><button onclick='editar(${i})'>Editar</button><button onclick='excluir(${i})'>Excluir</button></td></tr>`;
- });
-}
-
-/*==== FUNÇÃO EDITAR====*/
-function editar(i){
- 	const d = JSON.parse(localStorage.getItem('dados'))[i];
- 	document.getElementById('refs').innerHTML='';
- 	adicionarReferencia();
- 	const ref = document.querySelector('.ref-item');
- 	for(const k in d){
- 	if(ref.querySelector('.'+k)) ref.querySelector('.'+k).value = d[k];
- 	}
- 	const c = ref.querySelector('.citacoes');
- 	d.citacoes.forEach(txt=>{
- 	const div=document.createElement('div');
-	 div.innerHTML = `<textarea class='citacao'>${txt}</textarea>`;
- 	c.appendChild(div);
-	 });
- editIndex=i;
-}
-
-
-/*==== FUNÇÃO EXCLUIR====*/
-function excluir(i){
- 	if(confirm('Excluir?')){
- 	let dados = JSON.parse(localStorage.getItem('dados'));
- 	dados.splice(i,1);
- 	localStorage.setItem('dados',JSON.stringify(dados));
- 	listar();
- 	}
-}
-
-
-/*==== FUNÇÃO  EXPORTAR XML====*/
-function exportarXML(){
- 	const dados = JSON.parse(localStorage.getItem('dados') || '[]');
-
- let xml = '<?xml version="1.0" encoding="UTF-8"?><dados>';
-
- dados.forEach(d => {
-  xml += '<item>' +
-    	`<numero>${d.numero||''}</numero>` +
-    	`<autor>${d.autor||''}</autor>` +
-    	`<titulo>${d.titulo||''}</titulo>` +
-    	`<subtitulo>${d.subtitulo||''}</subtitulo>` +
-    	`<tipo>${d.tipo||''}</tipo>` +
-    	`<edicao>${d.edicao||''}</edicao>` +
-    	`<local>${d.local||''}</local>` +
-    	`<editora>${d.editora||''}</editora>` +
-    	`<ano>${d.ano||''}</ano>` +
-    	`<link>${d.link||''}</link>` +
-    	`<link2>${d.link2||''}</link2>` +
-    	`<data>${d.data||''}</data>` +
-    	`<citacaoTipo>${d.citacaoTipo||''}</citacaoTipo>` +
-    	`<pagina>${d.pagina||''}</pagina>`;
-
-	/*==== FUNÇÃO EXPORTAR CITAÇÕES====*/
- 	 if(d.citacoes){
-   	 d.citacoes.forEach(c=>{
-     	 xml += `<citacao>${c}</citacao>`;
-   	 });
-  	}
-
- 	 xml += '</item>';
- 	});
-
-	 xml += '</dados>';
-
-	 const blob = new Blob([xml], { type: 'application/xml;charset=utf-8;' });
-
- const a = document.createElement('a');
- a.href = URL.createObjectURL(blob);
- a.download = 'dados.xml';
- a.click();
-}
-
-
-/*==== FUNÇÃO EXPORTAR CSV====*/
-function exportarCSV(){
- const dados = JSON.parse(localStorage.getItem('dados') || '[]');
-
- let csv = 'Numero;Autor;Titulo;Subtitulo;Tipo;Edicao;Local;Editora;Ano;Link;Link2;Data;TipoCitacao;Pagina;Citacoes\n';
-
- dados.forEach(d => {
-
-	/*==== JUNTA TODA STRING====*/
-         const citacoes = (d.citacoes || []).join(' | ');
-
-  	csv += [
-    	d.numero || '',
-    	d.autor || '',
-   	 d.titulo || '',
-    	d.subtitulo || '',
-    	d.tipo || '',
-    	d.edicao || '',
-    	d.local || '',
-    	d.editora || '',
-    	d.ano || '',
-    	d.link || '',
-    	d.link2 || '',
-    	d.data || '',
-    	d.citacaoTipo || '',
-    	d.pagina || '',
-    	citacoes
-  	].join(';') + '\n';
- 	});
-
- 	const blob = new Blob(["\uFEFF" + csv], {
-   	type: 'text/csv;charset=utf-8;'
- 	});
-
- const a = document.createElement('a');
- a.href = URL.createObjectURL(blob);
- a.download = 'dados.xls';
- a.click();
-}
-
-
-
-/*==== FUNÇÃO IMPORTAR XML===*/
+/*==== IMPORT====*/
 function importarXML(e){
- 	const file = e.target.files[0];
- 	if(!file) return;
+ const file = e.target.files[0];
+ if(!file){
+   alert("Select a file!");
+   return;
+ }
 
  const reader = new FileReader();
 
  reader.onload = function(){
-  try {
+  try{
+   const parser = new DOMParser();
+   const xml = parser.parseFromString(reader.result, "application/xml");
 
-    	const parser = new DOMParser();
-    	const xml = parser.parseFromString(reader.result, 'text/xml');
+   // 🔴 detecta erro real de XML
+   if(xml.querySelector("parsererror")){
+     alert("Invalid XML file!");
+     return;
+   }
 
-   /*==== ❌ Detecta erro de XML====*/
+   const itens = xml.getElementsByTagName("item");
 
-    	if(xml.getElementsByTagName("parsererror").length){
-      	alert("XML inválido!");
-      	return;
-    	}
+   if(!itens.length){
+     alert("No <item> found in XML!");
+     return;
+   }
 
-    	const itens = xml.getElementsByTagName('item');
+   const novosDados = [];
 
-    	if(!itens.length){
-      	alert("Nenhum <item> encontrado no XML.");
-      	return;
-   	 }
+   for(let i=0;i<itens.length;i++){
 
-    const novosDados = [];
+     const get = (tag)=>{
+       const el = itens[i].getElementsByTagName(tag)[0];
+       return el ? el.textContent.trim() : '';
+     };
 
-    for(let i=0; i<itens.length; i++){
+     // 🔧 aceita citation OU citacao (compatibilidade total)
+     const citacoes = [];
+     let citNodes = itens[i].getElementsByTagName("citation");
 
-      	const get = (tag) => {
-       	 const el = itens[i].getElementsByTagName(tag)[0];
-        	return el ? el.textContent : '';
-      	};
+     if(!citNodes.length){
+       citNodes = itens[i].getElementsByTagName("citacao");
+     }
 
-           /*====  IMPORTAÇÃO DE CITAÇÕES====*/
+     for(let j=0;j<citNodes.length;j++){
+       const txt = citNodes[j].textContent.trim();
+       if(txt) citacoes.push(txt);
+     }
 
-        const citacoes = [];
-    	  const citNodes = itens[i].getElementsByTagName('citacao');
+     novosDados.push({
+       numero: get('number'),
+       autor: get('author'),
+       titulo: get('title'),
+       subtitulo: get('subtitle'),
+       tipo: get('type'),
+       edicao: get('edition'),
+       local: get('location'),
+       editora: get('publisher'),
+       ano: get('year'),
+       link: get('link'),
+       link2: get('alternativeLink'),
+       data: get('accessDate'),
+       citacaoTipo: get('citationType'),
+       pagina: get('page'),
+       citacoes: citacoes
+     });
+   }
 
-      	for(let j=0; j<citNodes.length; j++){
-       	 citacoes.push(citNodes[j].textContent);
-      	}
+   // 📊 PREVIEW
+   let preview = "Preview:\n\n";
 
-           novosDados.push({
-        	numero: get('numero'),
-        	autor: get('autor'),
-        	titulo: get('titulo'),
-        	subtitulo: get('subtitulo'),
-        	tipo: get('tipo'),
-        	edicao: get('edicao'),
-        	local: get('local'),
-        	editora: get('editora'),
-        	ano: get('ano'),
-        	link: get('link'),
-        	link2: get('link2'),
-        	data: get('data'),
-        	citacaoTipo: get('citacaoTipo'),
-        	pagina: get('pagina'),
-        	citacoes: citacoes
-     	 });
-   	 }
+   novosDados.slice(0,5).forEach((d,i)=>{
+     preview += `${i+1}. ${d.titulo} - ${d.autor}\n`;
+   });
 
-   
-           /*====  PREVIEW====*/
+   if(novosDados.length > 5){
+     preview += `\n... +${novosDados.length - 5} records`;
+   }
 
-    let preview = "Pré-visualização:\n\n";
-   	 novosDados.slice(0,5).forEach((d,i)=>{
-     	 preview += `${i+1}. ${d.titulo} - ${d.autor}\n`;
-    	});
+   const escolha = confirm(preview + "\n\nOK = Replace\nCancel = Merge");
 
-   	 if(novosDados.length > 5){
-      preview += `\n... +${novosDados.length - 5} registros`;
-   	 }
+   let dadosAtuais = JSON.parse(localStorage.getItem('dados') || '[]');
 
-           /*====  ESCOLHA DE USUÁRIO====*/
-    const escolha = confirm(preview + "\n\nOK = Substituir tudo\nCancelar = Mesclar");
+   if(escolha){
+     dadosAtuais = novosDados;
+   } else {
+     novosDados.forEach(novo=>{
+       const existe = dadosAtuais.some(d =>
+         d.titulo === novo.titulo &&
+         d.autor === novo.autor
+       );
+       if(!existe){
+         dadosAtuais.push(novo);
+       }
+     });
+   }
 
-    	let dadosAtuais = JSON.parse(localStorage.getItem('dados') || '[]');
+   localStorage.setItem('dados', JSON.stringify(dadosAtuais));
+   listar();
 
-   	 if(escolha){
+   // 🔥 reset input (IMPORTANTE)
+   e.target.value = '';
 
-               /*====  SUBSTITUIR====*/
-      	dadosAtuais = novosDados;
-  	  } else {
-           /*====  IMESCAR (EVITA DUPLICADOS SIMPLES)====*/
+   alert("Import successful!");
 
-             novosDados.forEach(novo => {
-
-               const existe = dadosAtuais.some(d =>
-          	d.titulo === novo.titulo &&
-          	d.autor === novo.autor
-        	);
-
-        if(!existe){
-          dadosAtuais.push(novo);
-        }
-      });
-    }
-
-    localStorage.setItem('dados', JSON.stringify(dadosAtuais));
-    listar();
-
-    e.target.value = '';
-
-    alert("Importação concluída com sucesso!");
-
-  } catch(e){
-    alert('Erro ao importar: ' + e.message);
+  }catch(err){
+   console.error(err);
+   alert("Error importing XML: " + err.message);
   }
  };
 
  reader.readAsText(file);
 }
 
+/*==== LIST ====*/
+function listar(){
+ const dados = JSON.parse(localStorage.getItem('dados')||'[]');
+ const tabela = document.getElementById('tabela');
+ tabela.innerHTML='';
 
- /*====  EXPORTAÇÃO DE PDF===*/
+ dados.forEach((d,i)=>{
+   tabela.innerHTML += `
+   <tr>
+     <td>${i+1}</td>
+     <td>${d.titulo || ''}</td>
+     <td>${d.autor || ''}</td>
+     <td>
+       <button onclick='editar(${i})'>Edit</button>
+       <button onclick='excluir(${i})'>Delete</button>
+     </td>
+   </tr>`;
+ });
+}
 
+/*==== EDIT ====*/
+function editar(i){
+ const d = JSON.parse(localStorage.getItem('dados'))[i];
+
+ document.getElementById('refs').innerHTML='';
+ adicionarReferencia();
+
+ const ref = document.querySelector('.ref-item');
+
+ for(const k in d){
+   if(ref.querySelector('.'+k)){
+     ref.querySelector('.'+k).value = d[k];
+   }
+ }
+
+ const c = ref.querySelector('.citacoes');
+ (d.citacoes || []).forEach(txt=>{
+   const div=document.createElement('div');
+   div.innerHTML = `<textarea class='citacao'>${txt}</textarea>`;
+   c.appendChild(div);
+ });
+
+ editIndex=i;
+}
+
+/*==== DELETE ====*/
+function excluir(i){
+ if(confirm('Delete this record?')){
+   let dados = JSON.parse(localStorage.getItem('dados'));
+   dados.splice(i,1);
+   localStorage.setItem('dados',JSON.stringify(dados));
+   listar();
+ }
+}
+
+/*==== EXPORT XML ====*/
+function exportarXML(){
+ const dados = JSON.parse(localStorage.getItem('dados') || '[]');
+
+ let xml = '<?xml version="1.0" encoding="UTF-8"?><dados>';
+
+ dados.forEach(d=>{
+   xml += '<item>' +
+     `<number>${d.numero||''}</number>` +
+     `<author>${d.autor||''}</author>` +
+     `<title>${d.titulo||''}</title>` +
+     `<subtitle>${d.subtitulo||''}</subtitle>` +
+     `<type>${d.tipo||''}</type>` +
+     `<edition>${d.edicao||''}</edition>` +
+     `<location>${d.local||''}</location>` +
+     `<publisher>${d.editora||''}</publisher>` +
+     `<year>${d.ano||''}</year>` +
+     `<link>${d.link||''}</link>` +
+     `<alternativeLink>${d.link2||''}</alternativeLink>` +
+     `<accessDate>${d.data||''}</accessDate>` +
+     `<citationType>${d.citacaoTipo||''}</citationType>` +
+     `<page>${d.pagina||''}</page>`;
+
+   (d.citacoes || []).forEach(c=>{
+     xml += `<citation>${c}</citation>`;
+   });
+
+   xml += '</item>';
+ });
+
+ xml += '</dados>';
+
+ const blob = new Blob([xml], { type: 'application/xml;charset=utf-8;' });
+ const a = document.createElement('a');
+ a.href = URL.createObjectURL(blob);
+ a.download = 'dados.xml';
+ a.click();
+}
+
+/*==== EXPORT CSV ====*/
+function exportarCSV(){
+ const dados = JSON.parse(localStorage.getItem('dados') || '[]');
+
+ let csv = 'Number;Author;Title;Subtitle;Type;Edition;Location;Publisher;Year;Link;Link2;Date;CitationType;Page;Citations\n';
+
+ dados.forEach(d=>{
+   const citacoes = (d.citacoes || []).join(' | ');
+
+   csv += [
+     d.numero||'',
+     d.autor||'',
+     d.titulo||'',
+     d.subtitulo||'',
+     d.tipo||'',
+     d.edicao||'',
+     d.local||'',
+     d.editora||'',
+     d.ano||'',
+     d.link||'',
+     d.link2||'',
+     d.data||'',
+     d.citacaoTipo||'',
+     d.pagina||'',
+     citacoes
+   ].join(';') + '\n';
+ });
+
+ const blob = new Blob(["\uFEFF"+csv], {type:'text/csv;charset=utf-8;'});
+ const a = document.createElement('a');
+ a.href = URL.createObjectURL(blob);
+ a.download = 'data.csv';
+ a.click();
+}
+
+/*==== EXPORT PDF ====*/
 function exportarPDF(){
  const dados = JSON.parse(localStorage.getItem('dados') || '[]');
 
  let html = `
- <html>
- <head>
- <title>Relatório Acadêmico</title>
+ <html><head>
  <style>
- body { font-family: Arial; padding:20px; }
- h1 { text-align:center; }
- .item { margin-bottom:25px; border-bottom:1px solid #ccc; padding-bottom:10px; }
- .titulo { font-weight:bold; font-size:16px; }
- .autor { font-style:italic; }
- .campo { margin:2px 0; }
- .citacao { margin-left:15px; font-size:13px; }
+ body{font-family:Arial;padding:20px;}
+ .item{margin-bottom:20px;border-bottom:1px solid #ccc;}
  </style>
- </head>
- <body>
- <h1>Relatório de Referências</h1>
+ </head><body>
+ <h1>Reference Report</h1>
  `;
 
- dados.forEach((d, i) => {
-  html += `
-  <div class="item">
-    <div class="titulo">${i+1}. ${d.titulo || ''}</div>
-    <div class="autor">${d.autor || ''}</div>
-
-    <div class="campo"><b>Subtítulo:</b> ${d.subtitulo || ''}</div>
-    <div class="campo"><b>Tipo:</b> ${d.tipo || ''}</div>
-    <div class="campo"><b>Edição:</b> ${d.edicao || ''}</div>
-    <div class="campo"><b>Local:</b> ${d.local || ''}</div>
-    <div class="campo"><b>Editora:</b> ${d.editora || ''}</div>
-    <div class="campo"><b>Ano:</b> ${d.ano || ''}</div>
-    <div class="campo"><b>Link:</b> ${d.link || ''}</div>
-    <div class="campo"><b>Link alternativo:</b> ${d.link2 || ''}</div>
-    <div class="campo"><b>Data de acesso:</b> ${d.data || ''}</div>
-    <div class="campo"><b>Tipo de citação:</b> ${d.citacaoTipo || ''}</div>
-    <div class="campo"><b>Página:</b> ${d.pagina || ''}</div>
-
-    <div class="campo"><b>Citações:</b></div>
-  `;
-
-  if(d.citacoes && d.citacoes.length){
-    d.citacoes.forEach(c=>{
-      html += `<div class="citacao">- ${c}</div>`;
-    });
-  }
-
-  html += `</div>`;
+ dados.forEach((d,i)=>{
+   html += `
+   <div class="item">
+   <b>${i+1}. ${d.titulo||''}</b><br>
+   <i>${d.autor||''}</i><br>
+   Subtitle: ${d.subtitulo||''}<br>
+   Type: ${d.tipo||''}<br>
+   Edition: ${d.edicao||''}<br>
+   Location: ${d.local||''}<br>
+   Publisher: ${d.editora||''}<br>
+   Year: ${d.ano||''}<br>
+   Link: ${d.link||''}<br>
+   Page: ${d.pagina||''}<br>
+   <br><b>Citations:</b><br>
+   ${(d.citacoes||[]).map(c=>"- "+c).join("<br>")}
+   </div>`;
  });
 
  html += `</body></html>`;
 
- const janela = window.open('', '_blank');
- janela.document.write(html);
- janela.document.close();
-
- janela.onload = function(){
-   janela.print();
- };
+ const w = window.open('');
+ w.document.write(html);
+ w.document.close();
+ w.print();
 }
 
+/*==== CLEAR ====*/
 function limpar(){
- if(confirm('Apagar tudo?')&&confirm('Irreversível')){
- localStorage.removeItem('dados');
- listar();
+ if(confirm('Delete all data? This action is irreversible.')){
+   localStorage.removeItem('dados');
+   listar();
  }
 }
 
 listar();
-
 </script>
 
   <footer>
 <div style="background:#2c3e50; color:#fff; margin:15px; padding:20px; border-radius:8px; text-align:center;">
-        © 2026 — Iraê César Brandão - Dev - Página demonstrativa para fins acadêmicos — <a style="color: white;" href="license.html"  target="_blank"><i>Licença Acadêmica (AREUL)</i></a>
+        © 2026 — Iraê César Brandão - Dev - Demonstration page for academic purposes. — <a style="color: white;" href="license.html"  target="_blank"><i>Academic License (AREUL)</i></a>
  <div>
   </footer>
 </body>
