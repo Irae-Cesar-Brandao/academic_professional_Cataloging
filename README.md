@@ -4,6 +4,8 @@
 <p><b>Iraê César Brandão - Desenvolver WEB </b>-------- <i>Atualizado em: 23/03/2026</i></p>
 </header>
 
+Aplicativo de Catalagoção Acadêmica para Pesquisadores  (ACAP)
+
 <div style="background:#ffffff; margin:15px; padding:15px; border-radius:8px; text-align:justify; font-style:italic; line-height:1.6;">
   <b>Finalidade de uso:</b><br><br>
   Este framework foi elaborado com a finalidade de estruturar, organizar e problematizar a produção acadêmica a partir de uma perspectiva relacional do conhecimento, na qual referências e citações não são apenas registros técnicos, mas expressões de vínculos epistemológicos e institucionais. Ao integrar dados bibliográficos e práticas de citação em um mesmo ambiente, busca-se não apenas facilitar a sistematização da pesquisa, mas também evidenciar as dinâmicas de construção do mérito, da autoria e da circulação do saber no campo acadêmico.
