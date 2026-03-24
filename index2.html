@@ -718,11 +718,27 @@ function limpar(){
 
 listar();
 
+
+/* ======      TRAVAR A CÓPIA CONTEÚDO COM REF. AUTOR========*/
+// ---------- BLOQUEAR CLIQUE DIREITO ----------
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault(); // Bloqueia o menu do botão direito
+    alert("Copiar conteúdo não é permitido sem referência ao autor '© 2026 Iraê César Brandão - https://luckway.com.br' .");
+});
+
+// ---------- BLOQUEAR CTRL+C E CTRL+X ----------
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && (e.key === 'c' || e.key === 'x')) {
+        e.preventDefault(); // Bloqueia copiar e recortar
+        alert("Copiar/Recortar desativado. Cite o autor! '© 2026 Iraê César Brandão - https://luckway.com.br'");
+    }
+});
+
 </script>
 
   <footer>
 <div style="background:#2c3e50; color:#fff; margin:15px; padding:20px; border-radius:8px; text-align:center;">
-      <p><h6>&copy;2026 Iraê César Brandão (Todos os direitos reservados) <a style="color: white;" href="license.html" target="_blank">Licença Acadêmica (AREUL)</a></h6></p>
+      <p><h6>&copy;2026 Iraê César Brandão (Todos os direitos reservados) <a style="color: white;" href="license.html" target="_blank">(Licença Acadêmica AREUL)</a></h6></p>
  <div>
   </footer>
 </body>
